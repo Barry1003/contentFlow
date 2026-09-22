@@ -16,7 +16,6 @@ export const IdeasBankView: React.FC = () => {
     addIdea,
     deleteIdea,
     convertIdeaToPost,
-    setIsAiIdeaModalOpen,
     settings,
   } = useApp();
 
@@ -103,18 +102,7 @@ export const IdeasBankView: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          {/* AI Brainstorm button */}
-          <button
-            id="ideas-ai-brainstorm-btn"
-            onClick={() => setIsAiIdeaModalOpen(true)}
-            className="inline-flex items-center gap-1.5 h-7 px-2.5 text-xs font-normal text-[#2A2925] dark:text-[#D9D7D1] border border-[#E9E7E2] dark:border-[#323230] hover:bg-[#EFECE6] dark:hover:bg-[#2B2B28] rounded-[4px] transition-colors focus-ring"
-          >
-            <Sparkles className="w-3.5 h-3.5 stroke-[1.5] text-[#6F6C66] dark:text-[#9A978F]" />
-            <span>Inspire</span>
-          </button>
-
-          {/* Add Idea Button */}
+        <div className="flex items-center gap-2">          {/* Add Idea Button */}
           <button
             id="ideas-add-new-btn"
             onClick={() => setIsAdding(!isAdding)}
@@ -293,12 +281,6 @@ export const IdeasBankView: React.FC = () => {
             <p className="text-xs text-[#6F6C66] dark:text-[#9A978F] mb-2 font-normal">
               No ideas logged yet.
             </p>
-            <button
-              onClick={() => setIsAiIdeaModalOpen(true)}
-              className="h-7 px-3 text-xs font-normal text-[#F3F1EC] bg-[#2C6E56] hover:bg-[#235946] dark:hover:bg-[#357E65] rounded-[4px] transition-colors focus-ring"
-            >
-              Generate ideas
-            </button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">

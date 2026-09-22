@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, PenTool } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { PostItem, PostStatus } from '../../types';
 import { ALL_STATUSES, STATUS_CONFIG, PLATFORM_STYLE_TOKENS } from '../../utils';
@@ -13,7 +13,6 @@ export const BoardView: React.FC = () => {
     updatePostStatus,
     openQuickAdd,
     celebrateMilestone,
-    openContentStudio,
   } = useApp();
 
   const [draggedPostId, setDraggedPostId] = useState<string | null>(null);
@@ -191,18 +190,6 @@ export const BoardView: React.FC = () => {
                         )}
                       </div>
 
-                      {/* Hover action to open content studio */}
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          openContentStudio(post.id);
-                        }}
-                        className="opacity-0 group-hover:opacity-100 absolute right-2 bottom-1.5 p-1 rounded-[3px] hover:bg-[#E9E7E2] dark:hover:bg-[#323230] text-[#6F6C66] dark:text-[#9A978F] hover:text-[#2A2925] dark:hover:text-[#D9D7D1] transition-opacity focus-ring"
-                        title="Write content"
-                      >
-                        <PenTool className="w-3 h-3 stroke-[1.5]" />
-                      </button>
                     </div>
                   );
                 })}

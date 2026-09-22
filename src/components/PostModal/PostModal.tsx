@@ -40,6 +40,7 @@ import {
   calculateEngagement,
 } from '../../utils';
 import { PlatformBadge } from '../Common/PlatformBadge';
+import { StudioEditor } from '../Studio/StudioEditor';
 
 export const PostModal: React.FC = () => {
   const {
@@ -53,7 +54,6 @@ export const PostModal: React.FC = () => {
     deletePost,
     settings,
     updateSettings,
-    openContentStudio,
   } = useApp();
 
   const isOpen = Boolean(selectedPost || isCreateModalOpen);
@@ -92,14 +92,16 @@ export const PostModal: React.FC = () => {
 
   // Performance metrics
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    views: undefined,
-    likes: undefined,
-    comments: undefined,
-    shares: undefined,
-    saves: undefined,
-    followersGained: undefined,
-    liveUrl: '',
+    views: selectedPost?.metrics?.views,
+    likes: selectedPost?.metrics?.likes,
+    comments: selectedPost?.metrics?.comments,
+    shares: selectedPost?.metrics?.shares,
+    saves: selectedPost?.metrics?.saves,
+    followersGained: selectedPost?.metrics?.followersGained,
+    liveUrl: selectedPost?.metrics?.liveUrl || '',
   });
+
+  const [isStudioOpen, setIsStudioOpen] = useState(false);
 
   // Active section tab in modal
   const [modalTab, setModalTab] = useState<'content' | 'script' | 'caption' | 'assets' | 'performance'>('content');
@@ -108,15 +110,6 @@ export const PostModal: React.FC = () => {
   const [isImprovingHook, setIsImprovingHook] = useState(false);
   const [aiHooks, setAiHooks] = useState<{ hook: string; trigger: string }[]>([]);
   const [hookAiError, setHookAiError] = useState<string | null>(null);
-
-  // AI Caption Writer state
-  const [isAiCaptionOpen, setIsAiCaptionOpen] = useState(false);
-  const [captionTone, setCaptionTone] = useState<'fun' | 'professional' | 'inspirational' | 'casual'>('casual');
-  const [isGeneratingCaption, setIsGeneratingCaption] = useState(false);
-  const [aiCaptionOptions, setAiCaptionOptions] = useState<
-    { caption: string; hashtags: string[]; callToAction: string }[]
-  >([]);
-  const [captionAiError, setCaptionAiError] = useState<string | null>(null);
 
   // Confirmation state
   const [isDirty, setIsDirty] = useState(false);
@@ -340,71 +333,6 @@ export const PostModal: React.FC = () => {
     setIsCreateModalOpen(false);
   };
 
-  const handleOpenStudio = () => {
-    let targetPostId = selectedPost?.id;
-    if (!targetPostId) {
-      const created = addPost({
-        title: title.trim() || 'Untitled Post',
-        platforms,
-        pillarId,
-        format,
-        scheduledDate,
-        scheduledTime,
-        status,
-        hook: hook.trim(),
-        caption: caption.trim(),
-        hashtags: parsedHashtags,
-        callToAction: callToAction.trim(),
-        notes: notes.trim(),
-        priority,
-        isCollaboration,
-        collabBrandName: isCollaboration ? collabBrandName.trim() : undefined,
-        collabPayment: isCollaboration ? collabPayment.trim() : undefined,
-        assetLinks,
-        checklist,
-        scriptContent: {
-          hasContent: false,
-          targetSeconds: 60,
-          hookText: hook.trim(),
-          bodyText: '',
-          callToActionText: callToAction.trim(),
-          sceneRows: [],
-          shotList: [],
-          slides: [],
-          platformVariations: [],
-          versions: [],
-        },
-      });
-      targetPostId = created.id;
-    } else {
-      updatePost(targetPostId, {
-        title: title.trim() || 'Untitled Post',
-        platforms,
-        pillarId,
-        format,
-        scheduledDate,
-        scheduledTime,
-        status,
-        hook: hook.trim(),
-        caption: caption.trim(),
-        hashtags: parsedHashtags,
-        callToAction: callToAction.trim(),
-        notes: notes.trim(),
-        priority,
-        isCollaboration,
-        collabBrandName: isCollaboration ? collabBrandName.trim() : undefined,
-        collabPayment: isCollaboration ? collabPayment.trim() : undefined,
-        assetLinks,
-        checklist,
-      });
-    }
-
-    setIsDirty(false);
-    setSelectedPost(null);
-    setIsCreateModalOpen(false);
-    openContentStudio(targetPostId);
-  };
-
   const handleClose = () => {
     if (isDirty) {
       const confirmDiscard = window.confirm(
@@ -539,77 +467,7 @@ export const PostModal: React.FC = () => {
     }
   };
 
-  // AI Caption Generator Trigger
-  const handleGenerateCaption = async () => {
-    if (!title.trim()) {
-      setCaptionAiError('Please enter a post title first.');
-      return;
-    }
 
-    setIsGeneratingCaption(true);
-    setCaptionAiError(null);
-
-    try {
-      const res = await fetch('/api/gemini/write-caption', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: title.trim(),
-          notes: notes.trim(),
-          tone: captionTone,
-          platforms,
-          pillar: settings.pillars.find((p) => p.id === pillarId)?.name || 'General',
-        }),
-      });
-
-      const data = await res.json();
-      if (data.captions && Array.isArray(data.captions)) {
-        setAiCaptionOptions(data.captions);
-      } else {
-        // High quality fallback options
-        setAiCaptionOptions([
-          {
-            caption: `${title}\n\nHere is the real breakdown of what actually works when it comes to this. I tested multiple variations so you don't have to waste time or energy!\n\nSave this post so you have it ready for your next session.`,
-            hashtags: ['#creatorlife', '#contenttips', '#learnwithme', '#dailyinspiration', '#aesthetic'],
-            callToAction: 'Which one would you try first? Comment below.',
-          },
-          {
-            caption: `Let’s talk about ${title}.\n\nA lot of people overlook this step, but it makes an 80% difference in the final result.\n\nHere are my top 3 rules:\n1. Keep it simple and repeatable\n2. Focus on consistency over perfection\n3. Protect your creative peace\n\nSave or share if this resonated with you today.`,
-            hashtags: ['#creatorgrowth', '#mindsetreset', '#routinevlog', '#creatortips'],
-            callToAction: 'Share with someone who needs to see this.',
-          },
-          {
-            caption: `The quick guide to ${title}.\n\nSwipe through / watch until the end for the full breakdown! Everything you need to get started today.\n\nAll tools and items referenced in bio.`,
-            hashtags: ['#tutorial', '#howtotips', '#stepbystep', '#creatorskills'],
-            callToAction: 'Tap the link in bio for full resource links.',
-          },
-        ]);
-        if (data.error) {
-          setCaptionAiError('Using smart creator presets (configure Gemini API key for dynamic AI).');
-        }
-      }
-    } catch (err: any) {
-      console.error('Caption generator error:', err);
-      setAiCaptionOptions([
-        {
-          caption: `${title}\n\nHere is the exact method I use. Save this post for later and let me know your thoughts in the comments.`,
-          hashtags: ['#creatorcommunity', '#contentcreator', '#dailyvlog', '#aesthetics'],
-          callToAction: 'Let me know if you want a part 2.',
-        },
-      ]);
-      setCaptionAiError('Using offline creator captions.');
-    } finally {
-      setIsGeneratingCaption(false);
-    }
-  };
-
-  const applyAiCaption = (option: { caption: string; hashtags: string[]; callToAction: string }) => {
-    setCaption(option.caption);
-    setHashtagInput(option.hashtags.join(' '));
-    setCallToAction(option.callToAction);
-    setIsDirty(true);
-    setIsAiCaptionOpen(false);
-  };
 
   return (
     <div
@@ -636,17 +494,6 @@ export const PostModal: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Write Content Button */}
-            <button
-              type="button"
-              onClick={handleOpenStudio}
-              className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-[4px] bg-[#1F5C47] hover:bg-[#174A39] text-white text-xs font-medium transition-colors"
-              title="Open full-screen Content Studio for this post"
-            >
-              <PenTool className="w-3.5 h-3.5 stroke-[1.5]" />
-              <span>Open Studio</span>
-            </button>
-
             {/* Template actions */}
             {settings.templates.length > 0 && !isEditing && (
               <select
@@ -998,39 +845,6 @@ export const PostModal: React.FC = () => {
           {/* TAB 2: Dedicated Script & Content Studio */}
           {modalTab === 'script' && (
             <div className="space-y-4">
-              <div className="p-4 rounded-[6px] bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="px-2 py-0.5 rounded-[3px] text-[11px] font-medium bg-[#FFFFFF] dark:bg-[#1C1C1A] border border-[#E6E4DF] dark:border-[#2A2A27] text-[#1C1B19] dark:text-[#F3F2EF]">
-                      {format}
-                    </span>
-                    {selectedPost?.scriptContent?.hasContent ? (
-                      <span className="text-[11px] text-[#1F5C47] font-medium">
-                        Script written
-                      </span>
-                    ) : (
-                      <span className="text-[11px] text-[#6F6C66] dark:text-[#9E9B93]">
-                        No script yet
-                      </span>
-                    )}
-                  </div>
-                  <h4 className="text-xs font-medium text-[#1C1B19] dark:text-[#F3F2EF]">
-                    Content Studio
-                  </h4>
-                  <p className="text-[11px] text-[#6F6C66] dark:text-[#9E9B93] mt-0.5 max-w-md">
-                    Structured writing space for {format} with teleprompter, shot list, and version history.
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={handleOpenStudio}
-                  className="h-8 px-3 rounded-[4px] bg-[#1F5C47] hover:bg-[#174A39] text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-colors shrink-0"
-                >
-                  <PenTool className="w-3.5 h-3.5 stroke-[1.5]" />
-                  <span>Open Studio</span>
-                </button>
-              </div>
 
               {/* Quick Hook & Body Outline */}
               <div className="space-y-3">
@@ -1173,99 +987,7 @@ export const PostModal: React.FC = () => {
                     </span>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => setIsAiCaptionOpen(!isAiCaptionOpen)}
-                    className="inline-flex items-center gap-1 text-xs font-medium text-[#1C1B19] dark:text-[#F3F2EF] hover:bg-[#F3F2EF] dark:hover:bg-[#242421] px-2 py-0.5 rounded-[4px] border border-[#E6E4DF] dark:border-[#2A2A27] transition-colors"
-                  >
-                    <Wand2 className="w-3 h-3 stroke-[1.5] text-[#1F5C47]" />
-                    <span>Generate caption</span>
-                  </button>
                 </div>
-
-                {/* AI Caption Generator Panel */}
-                {isAiCaptionOpen && (
-                  <div className="mb-3 p-3 bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[6px] space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium text-[#1C1B19] dark:text-[#F3F2EF]">
-                        AI Caption Writer
-                      </span>
-                      <div className="flex items-center gap-1">
-                        <span className="text-[11px] text-[#6F6C66] dark:text-[#9E9B93]">Tone:</span>
-                        {(['casual', 'fun', 'inspirational', 'professional'] as const).map(
-                          (t) => (
-                            <button
-                              key={t}
-                              type="button"
-                              onClick={() => setCaptionTone(t)}
-                              className={`px-2 py-0.5 rounded-[4px] text-[11px] capitalize transition-colors ${
-                                captionTone === t
-                                  ? 'bg-[#1C1B19] dark:bg-[#F3F2EF] text-[#FFFFFF] dark:text-[#1C1C1A] font-medium'
-                                  : 'bg-[#FFFFFF] dark:bg-[#1C1C1A] text-[#6F6C66] dark:text-[#9E9B93] border border-[#E6E4DF] dark:border-[#2A2A27]'
-                              }`}
-                            >
-                              {t}
-                            </button>
-                          )
-                        )}
-                      </div>
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={handleGenerateCaption}
-                      disabled={isGeneratingCaption}
-                      className="w-full py-1.5 px-3 rounded-[4px] text-xs font-medium text-white bg-[#1F5C47] hover:bg-[#174A39] transition-colors flex items-center justify-center gap-1.5 disabled:opacity-50"
-                    >
-                      {isGeneratingCaption ? (
-                        <>
-                          <Loader2 className="w-3.5 h-3.5 animate-spin stroke-[1.5]" />
-                          <span>Generating captions...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Sparkles className="w-3.5 h-3.5 stroke-[1.5]" />
-                          <span>Generate 3 captions ({captionTone})</span>
-                        </>
-                      )}
-                    </button>
-
-                    {captionAiError && (
-                      <p className="text-[11px] text-[#C53B3B] italic">{captionAiError}</p>
-                    )}
-
-                    {/* Captions Choices */}
-                    {aiCaptionOptions.length > 0 && (
-                      <div className="space-y-2 pt-1">
-                        {aiCaptionOptions.map((opt, idx) => (
-                          <div
-                            key={idx}
-                            className="p-3 bg-[#FFFFFF] dark:bg-[#1C1C1A] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-xs space-y-2"
-                          >
-                            <p className="whitespace-pre-line text-[#1C1B19] dark:text-[#F3F2EF]">
-                              {opt.caption}
-                            </p>
-                            <p className="text-[#6F6C66] dark:text-[#9E9B93] text-[11px]">
-                              {opt.hashtags.join(' ')}
-                            </p>
-                            <div className="flex items-center justify-between pt-1 border-t border-[#E6E4DF] dark:border-[#2A2A27]">
-                              <span className="text-[10px] text-[#6F6C66] dark:text-[#9E9B93]">
-                                CTA: {opt.callToAction}
-                              </span>
-                              <button
-                                type="button"
-                                onClick={() => applyAiCaption(opt)}
-                                className="px-2 py-0.5 text-xs font-medium text-white bg-[#1F5C47] hover:bg-[#174A39] rounded-[4px] transition-colors"
-                              >
-                                Use this caption
-                              </button>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
 
                 <textarea
                   rows={5}
@@ -1658,6 +1380,14 @@ export const PostModal: React.FC = () => {
           <div className="flex items-center gap-2">
             <button
               type="button"
+              onClick={() => setIsStudioOpen(true)}
+              className="h-7 px-3 flex items-center gap-1.5 text-xs font-medium text-fuchsia-600 dark:text-fuchsia-400 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-400/10 rounded-[4px] transition-colors mr-2"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              AI Studio
+            </button>
+            <button
+              type="button"
               onClick={handleClose}
               className="h-7 px-3 text-xs font-medium text-[#6F6C66] dark:text-[#9E9B93] hover:text-[#1C1B19] dark:hover:text-[#F3F2EF] rounded-[4px] transition-colors"
             >
@@ -1674,6 +1404,10 @@ export const PostModal: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {isStudioOpen && (
+        <StudioEditor post={selectedPost} onClose={() => setIsStudioOpen(false)} />
+      )}
     </div>
   );
 };

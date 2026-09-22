@@ -10,6 +10,19 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
+
+    // Suppress Next.js warning about script tags injected by third-party auth providers
+    const originalError = console.error;
+    console.error = (...args) => {
+      if (typeof args[0] === 'string' && args[0].includes('Encountered a script tag while rendering React component')) {
+        return;
+      }
+      originalError.apply(console, args);
+    };
+
+    return () => {
+      console.error = originalError;
+    };
   }, []);
 
   if (!mounted) {
@@ -17,7 +30,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <NeonAuthUIProvider authClient={neon.auth}>
+    <NeonAuthUIProvider emailOTP social={{ providers: ['google'] }} authClient={neon.auth}>
       {children}
     </NeonAuthUIProvider>
   );

@@ -49,11 +49,6 @@ export const Sidebar: React.FC = () => {
       icon: Kanban,
     },
     {
-      id: 'studio',
-      label: 'Content Studio',
-      icon: PenTool,
-    },
-    {
       id: 'ideas',
       label: 'Ideas',
       icon: Lightbulb,

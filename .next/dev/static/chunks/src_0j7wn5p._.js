@@ -23,17 +23,38 @@ function Providers({ children }) {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Providers.useEffect": ()=>{
             setMounted(true);
+            // Suppress Next.js warning about script tags injected by third-party auth providers
+            const originalError = console.error;
+            console.error = ({
+                "Providers.useEffect": (...args)=>{
+                    if (typeof args[0] === 'string' && args[0].includes('Encountered a script tag while rendering React component')) {
+                        return;
+                    }
+                    originalError.apply(console, args);
+                }
+            })["Providers.useEffect"];
+            return ({
+                "Providers.useEffect": ()=>{
+                    console.error = originalError;
+                }
+            })["Providers.useEffect"];
         }
     }["Providers.useEffect"], []);
     if (!mounted) {
         return null;
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$neondatabase$2f$auth$2d$ui$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__$3c$export__NeonAuthUIProvider__as__M$3e$__$3c$export__M__as__NeonAuthUIProvider$3e$__["NeonAuthUIProvider"], {
+        emailOTP: true,
+        social: {
+            providers: [
+                'google'
+            ]
+        },
         authClient: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$neon$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["neon"].auth,
         children: children
     }, void 0, false, {
         fileName: "[project]/src/app/providers.tsx",
-        lineNumber: 20,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
@@ -62,6 +83,9 @@ const neon = ("TURBOPACK compile-time truthy", 1) ? (0, __TURBOPACK__imported__m
     auth: {
         url: authUrl,
         adapter: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$neondatabase$2f$auth$2f$dist$2f$better$2d$auth$2d$react$2d$adapter$2d$DMizSZtB$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__t__as__BetterAuthReactAdapter$3e$__["BetterAuthReactAdapter"])()
+    },
+    dataApi: {
+        url: 'http://localhost'
     }
 }) : "TURBOPACK unreachable";
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

@@ -14,7 +14,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-client] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Link$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/link.js [app-client] (ecmascript) <export default as Link>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trash-2.js [app-client] (ecmascript) <export default as Trash2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wand$2d$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wand2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/wand-sparkles.js [app-client] (ecmascript) <export default as Wand2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$no$2d$axes$2d$column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-no-axes-column.js [app-client] (ecmascript) <export default as BarChart2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/external-link.js [app-client] (ecmascript) <export default as ExternalLink>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bookmark$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bookmark$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/bookmark.js [app-client] (ecmascript) <export default as Bookmark>");
@@ -100,12 +99,6 @@ const PostModal = ()=>{
     const [isImprovingHook, setIsImprovingHook] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [aiHooks, setAiHooks] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [hookAiError, setHookAiError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    // AI Caption Writer state
-    const [isAiCaptionOpen, setIsAiCaptionOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [captionTone, setCaptionTone] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('casual');
-    const [isGeneratingCaption, setIsGeneratingCaption] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [aiCaptionOptions, setAiCaptionOptions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
-    const [captionAiError, setCaptionAiError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     // Confirmation state
     const [isDirty, setIsDirty] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [showDeleteConfirm, setShowDeleteConfirm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -542,96 +535,6 @@ const PostModal = ()=>{
             setIsImprovingHook(false);
         }
     };
-    // AI Caption Generator Trigger
-    const handleGenerateCaption = async ()=>{
-        if (!title.trim()) {
-            setCaptionAiError('Please enter a post title first.');
-            return;
-        }
-        setIsGeneratingCaption(true);
-        setCaptionAiError(null);
-        try {
-            const res = await fetch('/api/gemini/write-caption', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    title: title.trim(),
-                    notes: notes.trim(),
-                    tone: captionTone,
-                    platforms,
-                    pillar: settings.pillars.find((p)=>p.id === pillarId)?.name || 'General'
-                })
-            });
-            const data = await res.json();
-            if (data.captions && Array.isArray(data.captions)) {
-                setAiCaptionOptions(data.captions);
-            } else {
-                // High quality fallback options
-                setAiCaptionOptions([
-                    {
-                        caption: `${title}\n\nHere is the real breakdown of what actually works when it comes to this. I tested multiple variations so you don't have to waste time or energy!\n\nSave this post so you have it ready for your next session.`,
-                        hashtags: [
-                            '#creatorlife',
-                            '#contenttips',
-                            '#learnwithme',
-                            '#dailyinspiration',
-                            '#aesthetic'
-                        ],
-                        callToAction: 'Which one would you try first? Comment below.'
-                    },
-                    {
-                        caption: `Let’s talk about ${title}.\n\nA lot of people overlook this step, but it makes an 80% difference in the final result.\n\nHere are my top 3 rules:\n1. Keep it simple and repeatable\n2. Focus on consistency over perfection\n3. Protect your creative peace\n\nSave or share if this resonated with you today.`,
-                        hashtags: [
-                            '#creatorgrowth',
-                            '#mindsetreset',
-                            '#routinevlog',
-                            '#creatortips'
-                        ],
-                        callToAction: 'Share with someone who needs to see this.'
-                    },
-                    {
-                        caption: `The quick guide to ${title}.\n\nSwipe through / watch until the end for the full breakdown! Everything you need to get started today.\n\nAll tools and items referenced in bio.`,
-                        hashtags: [
-                            '#tutorial',
-                            '#howtotips',
-                            '#stepbystep',
-                            '#creatorskills'
-                        ],
-                        callToAction: 'Tap the link in bio for full resource links.'
-                    }
-                ]);
-                if (data.error) {
-                    setCaptionAiError('Using smart creator presets (configure Gemini API key for dynamic AI).');
-                }
-            }
-        } catch (err) {
-            console.error('Caption generator error:', err);
-            setAiCaptionOptions([
-                {
-                    caption: `${title}\n\nHere is the exact method I use. Save this post for later and let me know your thoughts in the comments.`,
-                    hashtags: [
-                        '#creatorcommunity',
-                        '#contentcreator',
-                        '#dailyvlog',
-                        '#aesthetics'
-                    ],
-                    callToAction: 'Let me know if you want a part 2.'
-                }
-            ]);
-            setCaptionAiError('Using offline creator captions.');
-        } finally{
-            setIsGeneratingCaption(false);
-        }
-    };
-    const applyAiCaption = (option)=>{
-        setCaption(option.caption);
-        setHashtagInput(option.hashtags.join(' '));
-        setCallToAction(option.callToAction);
-        setIsDirty(true);
-        setIsAiCaptionOpen(false);
-    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         id: "post-modal-backdrop",
         className: "fixed inset-0 z-50 bg-[#141413]/50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto",
@@ -651,7 +554,7 @@ const PostModal = ()=>{
                                     className: `w-2 h-2 rounded-full ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATUS_CONFIG"][status]?.dot || 'bg-[#6F6C66]'}`
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 628,
+                                    lineNumber: 549,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -659,13 +562,13 @@ const PostModal = ()=>{
                                     children: isEditing ? 'Edit Post' : 'New Post'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 633,
+                                    lineNumber: 554,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 627,
+                            lineNumber: 548,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -681,20 +584,20 @@ const PostModal = ()=>{
                                             className: "w-3.5 h-3.5 stroke-[1.5]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 646,
+                                            lineNumber: 567,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: "Open Studio"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 647,
+                                            lineNumber: 568,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 640,
+                                    lineNumber: 561,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 settings.templates.length > 0 && !isEditing && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -708,7 +611,7 @@ const PostModal = ()=>{
                                             children: "Templates..."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 657,
+                                            lineNumber: 578,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         settings.templates.map((tmpl)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -716,13 +619,13 @@ const PostModal = ()=>{
                                                 children: tmpl.name
                                             }, tmpl.id, false, {
                                                 fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                lineNumber: 661,
+                                                lineNumber: 582,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 652,
+                                    lineNumber: 573,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -734,20 +637,20 @@ const PostModal = ()=>{
                                             className: "w-3.5 h-3.5 stroke-[1.5]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 673,
+                                            lineNumber: 594,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                             children: savedAsTemplateSuccess ? 'Saved' : 'Save template'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 674,
+                                            lineNumber: 595,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 668,
+                                    lineNumber: 589,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -758,24 +661,24 @@ const PostModal = ()=>{
                                         className: "w-4 h-4 stroke-[1.5]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                        lineNumber: 682,
+                                        lineNumber: 603,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 677,
+                                    lineNumber: 598,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 638,
+                            lineNumber: 559,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                    lineNumber: 626,
+                    lineNumber: 547,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -787,7 +690,7 @@ const PostModal = ()=>{
                             children: "Details & Schedule"
                         }, void 0, false, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 689,
+                            lineNumber: 610,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -798,27 +701,27 @@ const PostModal = ()=>{
                                     className: "w-3.5 h-3.5 stroke-[1.5]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 707,
+                                    lineNumber: 628,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "Script"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 708,
+                                    lineNumber: 629,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 selectedPost?.scriptContent?.hasContent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "w-1.5 h-1.5 rounded-full bg-[#1F5C47]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 710,
+                                    lineNumber: 631,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 699,
+                            lineNumber: 620,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -829,20 +732,20 @@ const PostModal = ()=>{
                                     children: "Hook & Caption"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 721,
+                                    lineNumber: 642,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 isOverCharLimit && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "w-1.5 h-1.5 rounded-full bg-[#C53B3B]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 723,
+                                    lineNumber: 644,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 713,
+                            lineNumber: 634,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -853,7 +756,7 @@ const PostModal = ()=>{
                                     children: "Checklist & Links"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 734,
+                                    lineNumber: 655,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -867,13 +770,13 @@ const PostModal = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 735,
+                                    lineNumber: 656,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 726,
+                            lineNumber: 647,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         status === 'Posted' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -884,26 +787,26 @@ const PostModal = ()=>{
                                     className: "w-3.5 h-3.5 stroke-[1.5]"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 748,
+                                    lineNumber: 669,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "Results"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 749,
+                                    lineNumber: 670,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 740,
+                            lineNumber: 661,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                    lineNumber: 688,
+                    lineNumber: 609,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -919,7 +822,7 @@ const PostModal = ()=>{
                                             children: "Title / Working Concept *"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 761,
+                                            lineNumber: 682,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -934,13 +837,13 @@ const PostModal = ()=>{
                                             className: "w-full px-3 py-2 text-xs font-medium bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] placeholder-[#6F6C66]/50 focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 764,
+                                            lineNumber: 685,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 760,
+                                    lineNumber: 681,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -950,7 +853,7 @@ const PostModal = ()=>{
                                             children: "Platforms"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 779,
+                                            lineNumber: 700,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -966,32 +869,32 @@ const PostModal = ()=>{
                                                             className: "w-3 h-3 stroke-[2]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 796,
+                                                            lineNumber: 717,
                                                             columnNumber: 40
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: plat.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 797,
+                                                            lineNumber: 718,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, plat.id, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 786,
+                                                    lineNumber: 707,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0));
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 782,
+                                            lineNumber: 703,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 778,
+                                    lineNumber: 699,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1004,7 +907,7 @@ const PostModal = ()=>{
                                                     children: "Content Pillar"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 807,
+                                                    lineNumber: 728,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1019,18 +922,18 @@ const PostModal = ()=>{
                                                             children: pil.name
                                                         }, pil.id, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 819,
+                                                            lineNumber: 740,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 810,
+                                                    lineNumber: 731,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 806,
+                                            lineNumber: 727,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1040,7 +943,7 @@ const PostModal = ()=>{
                                                     children: "Format"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 827,
+                                                    lineNumber: 748,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1055,24 +958,24 @@ const PostModal = ()=>{
                                                             children: fmt
                                                         }, fmt, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 839,
+                                                            lineNumber: 760,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 830,
+                                                    lineNumber: 751,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 826,
+                                            lineNumber: 747,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 805,
+                                    lineNumber: 726,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1085,7 +988,7 @@ const PostModal = ()=>{
                                                     children: "Scheduled Date"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 850,
+                                                    lineNumber: 771,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1095,7 +998,7 @@ const PostModal = ()=>{
                                                             className: "w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-[#6F6C66] pointer-events-none"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 854,
+                                                            lineNumber: 775,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1108,19 +1011,19 @@ const PostModal = ()=>{
                                                             className: "w-full pl-8 pr-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 855,
+                                                            lineNumber: 776,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 853,
+                                                    lineNumber: 774,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 849,
+                                            lineNumber: 770,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1130,7 +1033,7 @@ const PostModal = ()=>{
                                                     children: "Time"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 868,
+                                                    lineNumber: 789,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1140,7 +1043,7 @@ const PostModal = ()=>{
                                                             className: "w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-[#6F6C66] pointer-events-none"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 872,
+                                                            lineNumber: 793,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1153,25 +1056,25 @@ const PostModal = ()=>{
                                                             className: "w-full pl-8 pr-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 873,
+                                                            lineNumber: 794,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 871,
+                                                    lineNumber: 792,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 867,
+                                            lineNumber: 788,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 848,
+                                    lineNumber: 769,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1184,7 +1087,7 @@ const PostModal = ()=>{
                                                     children: "Status"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 889,
+                                                    lineNumber: 810,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1199,18 +1102,18 @@ const PostModal = ()=>{
                                                             children: st
                                                         }, st, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 901,
+                                                            lineNumber: 822,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 892,
+                                                    lineNumber: 813,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 888,
+                                            lineNumber: 809,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1220,7 +1123,7 @@ const PostModal = ()=>{
                                                     children: "Priority"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 909,
+                                                    lineNumber: 830,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1242,25 +1145,25 @@ const PostModal = ()=>{
                                                             children: cfg.label
                                                         }, p, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 917,
+                                                            lineNumber: 838,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0));
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 912,
+                                                    lineNumber: 833,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 908,
+                                            lineNumber: 829,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 887,
+                                    lineNumber: 808,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1276,7 +1179,7 @@ const PostModal = ()=>{
                                                             children: "Brand collaboration"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 942,
+                                                            lineNumber: 863,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1284,13 +1187,13 @@ const PostModal = ()=>{
                                                             children: "Tag this post as a sponsored partnership"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 945,
+                                                            lineNumber: 866,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 941,
+                                                    lineNumber: 862,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1303,13 +1206,13 @@ const PostModal = ()=>{
                                                     className: "w-4 h-4 rounded border-[#E6E4DF] dark:border-[#2A2A27] text-[#1F5C47] focus:ring-[#1F5C47]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 949,
+                                                    lineNumber: 870,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 940,
+                                            lineNumber: 861,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         isCollaboration && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1322,7 +1225,7 @@ const PostModal = ()=>{
                                                             children: "Brand name"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 963,
+                                                            lineNumber: 884,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1336,13 +1239,13 @@ const PostModal = ()=>{
                                                             className: "w-full px-2 py-1 text-xs bg-[#FFFFFF] dark:bg-[#1C1C1A] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 966,
+                                                            lineNumber: 887,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 962,
+                                                    lineNumber: 883,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1352,7 +1255,7 @@ const PostModal = ()=>{
                                                             children: "Compensation (optional)"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 978,
+                                                            lineNumber: 899,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1366,31 +1269,31 @@ const PostModal = ()=>{
                                                             className: "w-full px-2 py-1 text-xs bg-[#FFFFFF] dark:bg-[#1C1C1A] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 981,
+                                                            lineNumber: 902,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 977,
+                                                    lineNumber: 898,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 961,
+                                            lineNumber: 882,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 939,
+                                    lineNumber: 860,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 758,
+                            lineNumber: 679,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         modalTab === 'script' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1409,7 +1312,7 @@ const PostModal = ()=>{
                                                             children: format
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1004,
+                                                            lineNumber: 925,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         selectedPost?.scriptContent?.hasContent ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1417,20 +1320,20 @@ const PostModal = ()=>{
                                                             children: "Script written"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1008,
+                                                            lineNumber: 929,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             className: "text-[11px] text-[#6F6C66] dark:text-[#9E9B93]",
                                                             children: "No script yet"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1012,
+                                                            lineNumber: 933,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1003,
+                                                    lineNumber: 924,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1438,7 +1341,7 @@ const PostModal = ()=>{
                                                     children: "Content Studio"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1017,
+                                                    lineNumber: 938,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1450,13 +1353,13 @@ const PostModal = ()=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1020,
+                                                    lineNumber: 941,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1002,
+                                            lineNumber: 923,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1468,26 +1371,26 @@ const PostModal = ()=>{
                                                     className: "w-3.5 h-3.5 stroke-[1.5]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1030,
+                                                    lineNumber: 951,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                     children: "Open Studio"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1031,
+                                                    lineNumber: 952,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1025,
+                                            lineNumber: 946,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1001,
+                                    lineNumber: 922,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1500,7 +1403,7 @@ const PostModal = ()=>{
                                                     children: "Opening Hook"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1038,
+                                                    lineNumber: 959,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1514,13 +1417,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-3 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1041,
+                                                    lineNumber: 962,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1037,
+                                            lineNumber: 958,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1530,7 +1433,7 @@ const PostModal = ()=>{
                                                     children: "Talking Points / Outline"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1054,
+                                                    lineNumber: 975,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1544,13 +1447,13 @@ const PostModal = ()=>{
                                                     className: "w-full p-2.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47] leading-relaxed resize-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1057,
+                                                    lineNumber: 978,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1053,
+                                            lineNumber: 974,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1560,7 +1463,7 @@ const PostModal = ()=>{
                                                     children: "Call To Action"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1070,
+                                                    lineNumber: 991,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1574,25 +1477,25 @@ const PostModal = ()=>{
                                                     className: "w-full px-3 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1073,
+                                                    lineNumber: 994,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1069,
+                                            lineNumber: 990,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1036,
+                                    lineNumber: 957,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 1000,
+                            lineNumber: 921,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         modalTab === 'caption' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1608,7 +1511,7 @@ const PostModal = ()=>{
                                                     children: "Opening Hook"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1094,
+                                                    lineNumber: 1015,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1621,32 +1524,32 @@ const PostModal = ()=>{
                                                             className: "w-3 h-3 animate-spin stroke-[1.5]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1104,
+                                                            lineNumber: 1025,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
                                                             className: "w-3 h-3 stroke-[1.5] text-[#1F5C47]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1106,
+                                                            lineNumber: 1027,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: "Refine with AI"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1108,
+                                                            lineNumber: 1029,
                                                             columnNumber: 21
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1097,
+                                                    lineNumber: 1018,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1093,
+                                            lineNumber: 1014,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1660,7 +1563,7 @@ const PostModal = ()=>{
                                             className: "w-full px-3 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] placeholder-[#6F6C66]/50 focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1112,
+                                            lineNumber: 1033,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         aiHooks.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1671,7 +1574,7 @@ const PostModal = ()=>{
                                                     children: "Suggested hooks:"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1126,
+                                                    lineNumber: 1047,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 aiHooks.map((h, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1692,7 +1595,7 @@ const PostModal = ()=>{
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                        lineNumber: 1139,
+                                                                        lineNumber: 1060,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1700,13 +1603,13 @@ const PostModal = ()=>{
                                                                         children: h.trigger
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                        lineNumber: 1142,
+                                                                        lineNumber: 1063,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1138,
+                                                                lineNumber: 1059,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1714,13 +1617,13 @@ const PostModal = ()=>{
                                                                 children: "Apply"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1146,
+                                                                lineNumber: 1067,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, i, true, {
                                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                        lineNumber: 1130,
+                                                        lineNumber: 1051,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))),
                                                 hookAiError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1728,270 +1631,58 @@ const PostModal = ()=>{
                                                     children: hookAiError
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1152,
+                                                    lineNumber: 1073,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1125,
+                                            lineNumber: 1046,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1092,
+                                    lineNumber: 1013,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center justify-between mb-1",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center gap-2",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                            className: "text-xs font-medium text-[#6F6C66] dark:text-[#9E9B93] uppercase tracking-wider",
-                                                            children: "Caption"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1162,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: `text-[11px] tabular-nums px-1.5 py-0.5 rounded-[3px] ${isOverCharLimit ? 'bg-[#C53B3B]/10 text-[#C53B3B] font-medium' : 'text-[#6F6C66] dark:text-[#9E9B93]'}`,
-                                                            children: [
-                                                                currentChars,
-                                                                " / ",
-                                                                minCharLimit
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1165,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1161,
-                                                    columnNumber: 19
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    type: "button",
-                                                    onClick: ()=>setIsAiCaptionOpen(!isAiCaptionOpen),
-                                                    className: "inline-flex items-center gap-1 text-xs font-medium text-[#1C1B19] dark:text-[#F3F2EF] hover:bg-[#F3F2EF] dark:hover:bg-[#242421] px-2 py-0.5 rounded-[4px] border border-[#E6E4DF] dark:border-[#2A2A27] transition-colors",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wand$2d$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wand2$3e$__["Wand2"], {
-                                                            className: "w-3 h-3 stroke-[1.5] text-[#1F5C47]"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1181,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            children: "Generate caption"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1182,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1176,
-                                                    columnNumber: 19
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1160,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0)),
-                                        isAiCaptionOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mb-3 p-3 bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[6px] space-y-3",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "flex items-center justify-between",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "text-xs font-medium text-[#1C1B19] dark:text-[#F3F2EF]",
-                                                            children: "AI Caption Writer"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1190,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center gap-1",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-[11px] text-[#6F6C66] dark:text-[#9E9B93]",
-                                                                    children: "Tone:"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1194,
-                                                                    columnNumber: 25
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                [
-                                                                    'casual',
-                                                                    'fun',
-                                                                    'inspirational',
-                                                                    'professional'
-                                                                ].map((t)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        type: "button",
-                                                                        onClick: ()=>setCaptionTone(t),
-                                                                        className: `px-2 py-0.5 rounded-[4px] text-[11px] capitalize transition-colors ${captionTone === t ? 'bg-[#1C1B19] dark:bg-[#F3F2EF] text-[#FFFFFF] dark:text-[#1C1C1A] font-medium' : 'bg-[#FFFFFF] dark:bg-[#1C1C1A] text-[#6F6C66] dark:text-[#9E9B93] border border-[#E6E4DF] dark:border-[#2A2A27]'}`,
-                                                                        children: t
-                                                                    }, t, false, {
-                                                                        fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                        lineNumber: 1197,
-                                                                        columnNumber: 29
-                                                                    }, ("TURBOPACK compile-time value", void 0)))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1193,
-                                                            columnNumber: 23
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1189,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    type: "button",
-                                                    onClick: handleGenerateCaption,
-                                                    disabled: isGeneratingCaption,
-                                                    className: "w-full py-1.5 px-3 rounded-[4px] text-xs font-medium text-white bg-[#1F5C47] hover:bg-[#174A39] transition-colors flex items-center justify-center gap-1.5 disabled:opacity-50",
-                                                    children: isGeneratingCaption ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-center gap-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                        className: "text-xs font-medium text-[#6F6C66] dark:text-[#9E9B93] uppercase tracking-wider",
+                                                        children: "Caption"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/PostModal/PostModal.tsx",
+                                                        lineNumber: 1083,
+                                                        columnNumber: 21
+                                                    }, ("TURBOPACK compile-time value", void 0)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: `text-[11px] tabular-nums px-1.5 py-0.5 rounded-[3px] ${isOverCharLimit ? 'bg-[#C53B3B]/10 text-[#C53B3B] font-medium' : 'text-[#6F6C66] dark:text-[#9E9B93]'}`,
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                                                className: "w-3.5 h-3.5 animate-spin stroke-[1.5]"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1222,
-                                                                columnNumber: 27
-                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: "Generating captions..."
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1223,
-                                                                columnNumber: 27
-                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                            currentChars,
+                                                            " / ",
+                                                            minCharLimit
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                        lineNumber: 1221,
-                                                        columnNumber: 25
-                                                    }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
-                                                                className: "w-3.5 h-3.5 stroke-[1.5]"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1227,
-                                                                columnNumber: 27
-                                                            }, ("TURBOPACK compile-time value", void 0)),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: [
-                                                                    "Generate 3 captions (",
-                                                                    captionTone,
-                                                                    ")"
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1228,
-                                                                columnNumber: 27
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                        lineNumber: 1226,
-                                                        columnNumber: 25
+                                                        lineNumber: 1086,
+                                                        columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1214,
-                                                    columnNumber: 21
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                captionAiError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-[11px] text-[#C53B3B] italic",
-                                                    children: captionAiError
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1234,
-                                                    columnNumber: 23
-                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                aiCaptionOptions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "space-y-2 pt-1",
-                                                    children: aiCaptionOptions.map((opt, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "p-3 bg-[#FFFFFF] dark:bg-[#1C1C1A] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-xs space-y-2",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "whitespace-pre-line text-[#1C1B19] dark:text-[#F3F2EF]",
-                                                                    children: opt.caption
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1245,
-                                                                    columnNumber: 29
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-[#6F6C66] dark:text-[#9E9B93] text-[11px]",
-                                                                    children: opt.hashtags.join(' ')
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1248,
-                                                                    columnNumber: 29
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "flex items-center justify-between pt-1 border-t border-[#E6E4DF] dark:border-[#2A2A27]",
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "text-[10px] text-[#6F6C66] dark:text-[#9E9B93]",
-                                                                            children: [
-                                                                                "CTA: ",
-                                                                                opt.callToAction
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                            lineNumber: 1252,
-                                                                            columnNumber: 31
-                                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                            type: "button",
-                                                                            onClick: ()=>applyAiCaption(opt),
-                                                                            className: "px-2 py-0.5 text-xs font-medium text-white bg-[#1F5C47] hover:bg-[#174A39] rounded-[4px] transition-colors",
-                                                                            children: "Use this caption"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                            lineNumber: 1255,
-                                                                            columnNumber: 31
-                                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1251,
-                                                                    columnNumber: 29
-                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, idx, true, {
-                                                            fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1241,
-                                                            columnNumber: 27
-                                                        }, ("TURBOPACK compile-time value", void 0)))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1239,
-                                                    columnNumber: 23
-                                                }, ("TURBOPACK compile-time value", void 0))
-                                            ]
-                                        }, void 0, true, {
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/PostModal/PostModal.tsx",
+                                                lineNumber: 1082,
+                                                columnNumber: 19
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1188,
-                                            columnNumber: 19
+                                            lineNumber: 1081,
+                                            columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                             rows: 5,
@@ -2004,13 +1695,13 @@ const PostModal = ()=>{
                                             className: `w-full p-2.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] placeholder-[#6F6C66]/50 focus:outline-none focus:ring-1 resize-none ${isOverCharLimit ? 'border-[#C53B3B] focus:ring-[#C53B3B]' : 'border-[#E6E4DF] dark:border-[#2A2A27] focus:ring-[#1F5C47]'}`
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1270,
+                                            lineNumber: 1099,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1159,
+                                    lineNumber: 1080,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2023,7 +1714,7 @@ const PostModal = ()=>{
                                                     children: "Call To Action"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1289,
+                                                    lineNumber: 1118,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2037,13 +1728,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-3 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1292,
+                                                    lineNumber: 1121,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1288,
+                                            lineNumber: 1117,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2053,7 +1744,7 @@ const PostModal = ()=>{
                                                     children: "Hashtags"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1305,
+                                                    lineNumber: 1134,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2067,25 +1758,25 @@ const PostModal = ()=>{
                                                     className: "w-full px-3 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1308,
+                                                    lineNumber: 1137,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1304,
+                                            lineNumber: 1133,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1287,
+                                    lineNumber: 1116,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 1090,
+                            lineNumber: 1011,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         modalTab === 'assets' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2101,7 +1792,7 @@ const PostModal = ()=>{
                                                     children: "Checklist"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1329,
+                                                    lineNumber: 1158,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2114,13 +1805,13 @@ const PostModal = ()=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1332,
+                                                    lineNumber: 1161,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1328,
+                                            lineNumber: 1157,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2138,7 +1829,7 @@ const PostModal = ()=>{
                                                                     className: "w-3.5 h-3.5 rounded border-[#E6E4DF] dark:border-[#2A2A27] text-[#1F5C47] focus:ring-[#1F5C47]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1344,
+                                                                    lineNumber: 1173,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2146,13 +1837,13 @@ const PostModal = ()=>{
                                                                     children: item.label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1350,
+                                                                    lineNumber: 1179,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1343,
+                                                            lineNumber: 1172,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2163,23 +1854,23 @@ const PostModal = ()=>{
                                                                 className: "w-3.5 h-3.5 stroke-[1.5]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1365,
+                                                                lineNumber: 1194,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1360,
+                                                            lineNumber: 1189,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, item.id, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1339,
+                                                    lineNumber: 1168,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1337,
+                                            lineNumber: 1166,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2194,7 +1885,7 @@ const PostModal = ()=>{
                                                     className: "flex-1 px-2.5 py-1 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1373,
+                                                    lineNumber: 1202,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2204,19 +1895,19 @@ const PostModal = ()=>{
                                                     children: "Add"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1381,
+                                                    lineNumber: 1210,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1372,
+                                            lineNumber: 1201,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1327,
+                                    lineNumber: 1156,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2227,7 +1918,7 @@ const PostModal = ()=>{
                                             children: "Asset Links"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1393,
+                                            lineNumber: 1222,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2245,7 +1936,7 @@ const PostModal = ()=>{
                                                                     className: "w-3 h-3 shrink-0 stroke-[1.5]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1409,
+                                                                    lineNumber: 1238,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2256,7 +1947,7 @@ const PostModal = ()=>{
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1410,
+                                                                    lineNumber: 1239,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2264,20 +1955,20 @@ const PostModal = ()=>{
                                                                     children: link.url
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1411,
+                                                                    lineNumber: 1240,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
                                                                     className: "w-3 h-3 shrink-0 stroke-[1.5]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                    lineNumber: 1412,
+                                                                    lineNumber: 1241,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1403,
+                                                            lineNumber: 1232,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2288,23 +1979,23 @@ const PostModal = ()=>{
                                                                 className: "w-3.5 h-3.5 stroke-[1.5]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                                lineNumber: 1419,
+                                                                lineNumber: 1248,
                                                                 columnNumber: 25
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                            lineNumber: 1414,
+                                                            lineNumber: 1243,
                                                             columnNumber: 23
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, link.id, true, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1399,
+                                                    lineNumber: 1228,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1397,
+                                            lineNumber: 1226,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2318,7 +2009,7 @@ const PostModal = ()=>{
                                                     className: "px-2.5 py-1 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1426,
+                                                    lineNumber: 1255,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2329,7 +2020,7 @@ const PostModal = ()=>{
                                                     className: "px-2.5 py-1 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1433,
+                                                    lineNumber: 1262,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2339,19 +2030,19 @@ const PostModal = ()=>{
                                                     children: "Add link"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1440,
+                                                    lineNumber: 1269,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1425,
+                                            lineNumber: 1254,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1392,
+                                    lineNumber: 1221,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2362,7 +2053,7 @@ const PostModal = ()=>{
                                             children: "Notes"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1452,
+                                            lineNumber: 1281,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2376,19 +2067,19 @@ const PostModal = ()=>{
                                             className: "w-full p-2.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] focus:outline-none focus:ring-1 focus:ring-[#1F5C47] resize-none"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1455,
+                                            lineNumber: 1284,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1451,
+                                    lineNumber: 1280,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 1325,
+                            lineNumber: 1154,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         modalTab === 'performance' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2399,7 +2090,7 @@ const PostModal = ()=>{
                                     children: "Log actual reach and engagement stats to update analytics."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1472,
+                                    lineNumber: 1301,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2412,7 +2103,7 @@ const PostModal = ()=>{
                                                     children: "Views"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1478,
+                                                    lineNumber: 1307,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2429,13 +2120,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] tabular-nums"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1481,
+                                                    lineNumber: 1310,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1477,
+                                            lineNumber: 1306,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2445,7 +2136,7 @@ const PostModal = ()=>{
                                                     children: "Likes"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1494,
+                                                    lineNumber: 1323,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2462,13 +2153,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] tabular-nums"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1497,
+                                                    lineNumber: 1326,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1493,
+                                            lineNumber: 1322,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2478,7 +2169,7 @@ const PostModal = ()=>{
                                                     children: "Comments"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1510,
+                                                    lineNumber: 1339,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2495,13 +2186,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] tabular-nums"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1513,
+                                                    lineNumber: 1342,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1509,
+                                            lineNumber: 1338,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2511,7 +2202,7 @@ const PostModal = ()=>{
                                                     children: "Shares"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1526,
+                                                    lineNumber: 1355,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2528,13 +2219,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] tabular-nums"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1529,
+                                                    lineNumber: 1358,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1525,
+                                            lineNumber: 1354,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2544,7 +2235,7 @@ const PostModal = ()=>{
                                                     children: "Saves"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1542,
+                                                    lineNumber: 1371,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2561,13 +2252,13 @@ const PostModal = ()=>{
                                                     className: "w-full px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] tabular-nums"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1545,
+                                                    lineNumber: 1374,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1541,
+                                            lineNumber: 1370,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2577,7 +2268,7 @@ const PostModal = ()=>{
                                                     children: "Followers Gained"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1558,
+                                                    lineNumber: 1387,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2594,19 +2285,19 @@ const PostModal = ()=>{
                                                     className: "w-full px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF] tabular-nums"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1561,
+                                                    lineNumber: 1390,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1557,
+                                            lineNumber: 1386,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1476,
+                                    lineNumber: 1305,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2616,7 +2307,7 @@ const PostModal = ()=>{
                                             children: "Live Post URL"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1578,
+                                            lineNumber: 1407,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2636,7 +2327,7 @@ const PostModal = ()=>{
                                                     className: "flex-1 px-2.5 py-1.5 text-xs bg-[#FBFBFA] dark:bg-[#141413] border border-[#E6E4DF] dark:border-[#2A2A27] rounded-[4px] text-[#1C1B19] dark:text-[#F3F2EF]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1582,
+                                                    lineNumber: 1411,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 metrics.liveUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2649,24 +2340,24 @@ const PostModal = ()=>{
                                                         className: "w-3.5 h-3.5 stroke-[1.5]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                        lineNumber: 1600,
+                                                        lineNumber: 1429,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                                    lineNumber: 1593,
+                                                    lineNumber: 1422,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1581,
+                                            lineNumber: 1410,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1577,
+                                    lineNumber: 1406,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 metrics.views && metrics.views > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2677,7 +2368,7 @@ const PostModal = ()=>{
                                             children: "Engagement Rate:"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1609,
+                                            lineNumber: 1438,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2688,25 +2379,25 @@ const PostModal = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1612,
+                                            lineNumber: 1441,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1608,
+                                    lineNumber: 1437,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0)) : null
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 1471,
+                            lineNumber: 1300,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                    lineNumber: 755,
+                    lineNumber: 676,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2722,7 +2413,7 @@ const PostModal = ()=>{
                                             children: "Delete post?"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1628,
+                                            lineNumber: 1457,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2732,7 +2423,7 @@ const PostModal = ()=>{
                                             children: "Yes, delete"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1629,
+                                            lineNumber: 1458,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2742,13 +2433,13 @@ const PostModal = ()=>{
                                             children: "Cancel"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                            lineNumber: 1636,
+                                            lineNumber: 1465,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1627,
+                                    lineNumber: 1456,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     type: "button",
@@ -2759,22 +2450,22 @@ const PostModal = ()=>{
                                         className: "w-4 h-4 stroke-[1.5]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                        lineNumber: 1651,
+                                        lineNumber: 1480,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1645,
+                                    lineNumber: 1474,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                lineNumber: 1625,
+                                lineNumber: 1454,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 1623,
+                            lineNumber: 1452,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2787,7 +2478,7 @@ const PostModal = ()=>{
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1659,
+                                    lineNumber: 1488,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2798,34 +2489,34 @@ const PostModal = ()=>{
                                     children: isEditing ? 'Save changes' : 'Save post'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                                    lineNumber: 1666,
+                                    lineNumber: 1495,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                            lineNumber: 1658,
+                            lineNumber: 1487,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/PostModal/PostModal.tsx",
-                    lineNumber: 1622,
+                    lineNumber: 1451,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/PostModal/PostModal.tsx",
-            lineNumber: 620,
+            lineNumber: 541,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/PostModal/PostModal.tsx",
-        lineNumber: 615,
+        lineNumber: 536,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(PostModal, "DuonNbXL+61WYgqa0LQp3eumg9E=", false, function() {
+_s(PostModal, "t4T+gpwUax461URQlZ0jKG0rjM4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$AppContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useApp"]
     ];

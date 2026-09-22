@@ -1,3 +1,4 @@
 {
+  "/auth/[[...pathname]]/page": "app/auth/[[...pathname]]/page.js",
   "/page": "app/page.js"
 }

@@ -22,6 +22,9 @@ model User {
   posts         Post[]
   ideas         Idea[]
   settings      Settings?
+  products      Product[]
+  orders        Order[]
+  conversations Conversation[]
 }
 
 model Session {
@@ -128,3 +131,59 @@ model Settings {
   userId                 String   @unique
   user                   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders      Order[]
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  customerName    String
+  customerEmail   String
+  deliveryAddress String
+  status          String   @default("PENDING") // PENDING, COMPLETED, CANCELLED
+  paymentMethod   String   // WEBSITE, DM
+  totalAmount     Float
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  productId       String
+  product         Product  @relation(fields: [productId], references: [id])
+  
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  buyerName String
+  buyerEmail String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  messages  Message[]
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  content        String
+  isFromBuyer    Boolean      @default(true)
+  createdAt      DateTime     @default(now())
+  
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+}
+

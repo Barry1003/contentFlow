@@ -18,7 +18,7 @@ import {
 import { PlatformBadge } from '../Common/PlatformBadge';
 
 export const DashboardView: React.FC = () => {
-  const { posts, settings, setSelectedPost, setIsAiPlanModalOpen } = useApp();
+  const { posts, settings, setSelectedPost } = useApp();
   const [leaderboardSort, setLeaderboardSort] = useState<'views' | 'engagement' | 'likes' | 'shares'>('views');
 
   const weeklyTarget = settings.weeklyTargetPosts || 3;
@@ -366,17 +366,6 @@ export const DashboardView: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="pt-2 flex items-center justify-between text-xs">
-            <span className="text-[#6F6C66] dark:text-[#9A978F] font-normal">Need strategic assistance?</span>
-            <button
-              onClick={() => setIsAiPlanModalOpen(true)}
-              className="text-xs font-normal text-[#2C6E56] dark:text-[#5AA88C] hover:underline flex items-center gap-1"
-            >
-              <span>Plan 30 days</span>
-              <ArrowUpRight className="w-3 h-3 stroke-[1.5]" />
-            </button>
           </div>
         </div>
       </div>

@@ -191,7 +191,7 @@ export interface UserSettings {
   lastExportedAt?: string;
 }
 
-export type ActiveTab = 'today' | 'calendar' | 'board' | 'ideas' | 'studio' | 'insights' | 'dashboard' | 'analytics' | 'settings';
+export type ActiveTab = 'today' | 'calendar' | 'board' | 'ideas' | 'insights' | 'dashboard' | 'analytics' | 'settings';
 
 export interface ToastItem {
   id: string;

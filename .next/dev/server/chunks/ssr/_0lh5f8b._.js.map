@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///home/barry/Desktop/contentFlow/src/app/auth/[[...pathname]]/page.tsx"],"sourcesContent":["\"use client\";\n\nimport { AuthView } from '@neondatabase/neon-js/auth/react/ui';\nimport { use } from 'react';\n\nexport default function AuthPage({ params }: { params: Promise<{ pathname?: string[] }> }) {\n  const resolvedParams = use(params);\n  // Next.js catch-all params come as an array, Neon Auth expects a slash-separated string\n  const pathname = resolvedParams.pathname ? resolvedParams.pathname.join('/') : '';\n  \n  return (\n    <div\n      style={{\n        display: 'flex',\n        justifyContent: 'center',\n        alignItems: 'center',\n        minHeight: '100vh',\n      }}\n    >\n      <AuthView pathname={pathname} />\n    </div>\n  );\n}\n"],"names":["AuthPage","params","resolvedParams","pathname","join","style","display","justifyContent","alignItems","minHeight"],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAKe,SAASA,SAAS,EAAEC,MAAM,EAAgD;IACvF,MAAMC,iBAAiB,IAAA,4MAAG,EAACD;IAC3B,wFAAwF;IACxF,MAAME,WAAWD,eAAeC,QAAQ,GAAGD,eAAeC,QAAQ,CAACC,IAAI,CAAC,OAAO;IAE/E,qBACE,8OAAC;QACCC,OAAO;YACLC,SAAS;YACTC,gBAAgB;YAChBC,YAAY;YACZC,WAAW;QACb;kBAEA,cAAA,8OAAC,4PAAQ;YAACN,UAAUA;;;;;;;;;;;AAG1B"}}]
+}

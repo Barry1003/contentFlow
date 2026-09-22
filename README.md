@@ -1,76 +1,75 @@
 # ContentFlow
 
-ContentFlow is a modern, premium social media content calendar and management workspace. Designed with a sleek, high-end SaaS aesthetic, it empowers creators to brainstorm ideas, draft posts with AI assistance, and seamlessly schedule their content calendar.
+ContentFlow is a modern, mobile-friendly social media content calendar and performance tracker. It helps creators manage their publishing schedule, maintain consistency, and organize ideas—all within a fast and beautiful interface.
 
-## ✨ Features
+## 🚀 Features
 
-- **Dynamic Content Calendar:** Track your scheduled posts, review due dates, and monitor your daily agenda.
-- **Ideas Bank:** A dedicated workspace to drop rapid-fire ideas, tag them, and save them for later refinement.
-- **Content Studio:** An interactive editor where you can draft your posts.
-- **AI Brainstorming:** Integrated AI (powered by Google Gemini) to generate fresh post concepts when you hit writer's block.
-- **Premium UI:** A stunning, modern interface featuring smooth micro-animations, glassmorphism (`backdrop-blur`), and a seamless Light/Dark mode tailored with Tailwind CSS v4.
-- **Secure Authentication:** Managed authentication with secure login flows.
+- **Content Calendar:** Visualize your publishing schedule with monthly and weekly grids.
+- **Drag & Drop Organization:** Easily move posts across dates to manage your pipeline.
+- **Idea Bank:** Store content ideas, categorize them by content pillars, and convert them to scheduled posts with one click.
+- **Customizable Creator Profile:** Set your niche, active platforms (Instagram, TikTok, YouTube, etc.), and track your consistency against a weekly target.
+- **Analytics & Metrics:** Log performance metrics (views, likes, comments, shares, saves) to see engagement rates over time.
 
----
+## 🛠️ Technical Stack
 
-## 🛠 Technical Architecture
+This project is built using modern web development standards to ensure maximum performance and developer experience:
 
-ContentFlow is built on a bleeding-edge modern web stack designed for performance, type safety, and scalability.
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Database ORM:** [Prisma](https://www.prisma.io/)
+- **Database:** [Neon (Serverless Postgres)](https://neon.tech/)
+- **Authentication:** [Better Auth](https://better-auth.com/) (with Neon DB adapter) & Neon Auth UI
 
-### Tech Stack
-- **Framework:** [Next.js (App Router)](https://nextjs.org/) - React framework for SSR and optimized routing.
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS with native CSS variable theming.
-- **Database:** [Neon (Serverless Postgres)](https://neon.tech/) - High-performance, scalable PostgreSQL.
-- **ORM:** [Prisma](https://www.prisma.io/) - Strongly typed database client and schema management.
-- **Authentication:** [Neon Managed Auth](https://neon.tech/docs/guides/neon-auth) - Powered by Better Auth, deeply integrated into the Neon ecosystem using the `@neondatabase/neon-js` SDK.
-- **AI:** Google Gemini API for generative AI workflows.
+## 📦 Getting Started
 
-### System Design Highlights
-- **Client/Server Boundary:** The application makes careful use of Next.js Server Components and Client Components to ensure fast page loads while maintaining interactive UI elements.
-- **Authentication Flow:** Authentication is managed fully by Neon. The Next.js application verifies session state server-side and uses the `@neondatabase/neon-js` UI provider (`<NeonAuthUIProvider>`) for frontend login states and session management.
-- **Prisma Schema:** `User`, `Post`, and `Idea` models are managed via Prisma, ensuring end-to-end type safety from the database to the React frontend.
+### Prerequisites
+- Node.js 18.x or later
+- npm or pnpm
+- A Postgres database URL (we recommend Neon.tech)
 
----
+### Installation
 
-## 🚀 Local Development Setup
+1. **Clone the repository & install dependencies**
+   ```bash
+   npm install
+   ```
 
-Follow these steps to run ContentFlow on your local machine.
+2. **Environment Variables**
+   Create a `.env.local` file in the root directory and add your connection string and Neon configuration:
+   ```env
+   DATABASE_URL="postgres://username:password@your-database-host.com/dbname?sslmode=require"
+   NEXT_PUBLIC_NEON_AUTH_URL="https://your-neon-auth-url"
+   ```
 
-### 1. Clone & Install
-Ensure you have Node.js (v20+) installed.
-```bash
-git clone https://github.com/your-username/contentflow.git
-cd contentflow
-npm install
-```
+3. **Database Setup**
+   Run the Prisma migration to initialize your database schema:
+   ```bash
+   npx prisma db push
+   ```
 
-### 2. Environment Variables
-Create a `.env.local` file in the root of the project and add your configuration strings. You will need a Neon Postgres Database and a Gemini API Key.
+4. **Run the Development Server**
+   Start the app locally with Turbopack:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-```env
-# Neon Database Connection String
-DATABASE_URL="postgresql://neondb_owner:...@...aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+## 📁 Project Structure
 
-# Neon Managed Auth Endpoint
-NEXT_PUBLIC_NEON_AUTH_URL="https://....neonauth....aws.neon.tech/neondb/auth"
+- `src/app/`: Next.js pages, layouts, and Server Actions.
+- `src/components/`: Reusable React components organized by domain (`Calendar`, `PostModal`, `Onboarding`, etc.).
+- `src/context/`: Global React Context (`AppContext.tsx`) managing optimistic updates and state.
+- `prisma/`: Prisma ORM schemas and migrations.
+- `src/types.ts`: TypeScript interfaces for the application.
 
-# Google Gemini API Key for AI features
-GEMINI_API_KEY="your_gemini_api_key_here"
-```
+## 🎨 Design Philosophy
 
-### 3. Sync Database Schema
-Push the Prisma schema to your Neon database to create the necessary tables for Posts and Ideas.
-```bash
-npx prisma db push
-```
-
-### 4. Run the Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser. You will be prompted to sign in using the Neon Auth flow. Once authenticated, you will be redirected to your empty workspace.
-
----
+ContentFlow aims to be a "normal", human-centric tool. It prioritizes:
+- **Clean UI:** No cluttered toolbars or overly "AI-generated" aesthetics. 
+- **Performance:** Instant feedback via optimistic UI updates in React State before server mutations complete.
+- **Reliability:** Standard form validations and solid database architecture with Postgres.
 
 ## 🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Ensure that you run `npm run build` locally to verify that all Next.js type checks pass before submitting a PR.
+
+Contributions are welcome! Please ensure that your code adheres to the existing styling standards and passes all TypeScript checks before submitting a PR.

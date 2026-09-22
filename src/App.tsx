@@ -12,16 +12,15 @@ import { Header } from './components/Header/Header';
 import { CalendarView } from './components/Calendar/CalendarView';
 import { BoardView } from './components/Board/BoardView';
 import { TodayView } from './components/Today/TodayView';
-import { ContentStudioView } from './components/Studio/ContentStudioView';
 import { IdeasBankView } from './components/Ideas/IdeasBankView';
 import { DashboardView } from './components/Dashboard/DashboardView';
 import { SettingsView } from './components/Settings/SettingsView';
 import { PostModal } from './components/PostModal/PostModal';
 import { AiIdeaGeneratorModal } from './components/AI/AiIdeaGeneratorModal';
-import { AiMonthPlannerModal } from './components/AI/AiMonthPlannerModal';
+
 
 const AppLayout: React.FC = () => {
-  const { activeTab } = useApp();
+  const { activeTab, isAiGeneratorOpen, setIsAiGeneratorOpen } = useApp();
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans antialiased">
@@ -36,20 +35,22 @@ const AppLayout: React.FC = () => {
           {activeTab === 'today' && <TodayView />}
           {activeTab === 'calendar' && <CalendarView />}
           {activeTab === 'board' && <BoardView />}
-          {activeTab === 'studio' && <ContentStudioView />}
           {activeTab === 'ideas' && <IdeasBankView />}
           {(activeTab === 'dashboard' || activeTab === 'analytics' || activeTab === 'insights') && <DashboardView />}
           {activeTab === 'settings' && <SettingsView />}
         </main>
       </div>
 
-      {/* Mobile Bottom Navigation */}
+      {/* Mobile Bottom Nav */}
       <BottomNav />
 
-      {/* Global Modals */}
+      {/* Modals */}
       <PostModal />
-      <AiIdeaGeneratorModal />
-      <AiMonthPlannerModal />
+      <AiIdeaGeneratorModal 
+        isOpen={isAiGeneratorOpen} 
+        onClose={() => setIsAiGeneratorOpen(false)} 
+      />
+
     </div>
   );
 };

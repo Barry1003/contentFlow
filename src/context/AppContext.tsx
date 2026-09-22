@@ -62,10 +62,10 @@ interface AppContextType {
   setIsShortcutsOpen: (open: boolean) => void;
   isSettingsOpen: boolean;
   setIsSettingsOpen: (open: boolean) => void;
-  isAiPlanModalOpen: boolean;
-  setIsAiPlanModalOpen: (open: boolean) => void;
-  isAiIdeaModalOpen: boolean;
-  setIsAiIdeaModalOpen: (open: boolean) => void;
+
+  // AI Studio
+  isAiGeneratorOpen: boolean;
+  setIsAiGeneratorOpen: (open: boolean) => void;
 
   // Onboarding
   showOnboarding: boolean;
@@ -102,13 +102,6 @@ interface AppContextType {
   deleteIdea: (id: string) => void;
   convertIdeaToPost: (ideaId: string, scheduledDate?: string) => void;
 
-  // Content Studio
-  activeStudioPostId: string | null;
-  openContentStudio: (postId: string) => void;
-  closeContentStudio: () => void;
-  updatePostScriptContent: (postId: string, content: Partial<ScriptContentData>) => void;
-  saveScriptVersion: (postId: string, label?: string) => void;
-  restoreScriptVersion: (postId: string, versionId: string) => void;
 
   // Settings Actions
   updateSettings: (updates: Partial<UserSettings>) => void;
@@ -184,16 +177,15 @@ export const AppProvider: React.FC<{
   const [isQuickAddOpen, setIsQuickAddOpen] = useState(false);
 
   // Content Studio active post
-  const [activeStudioPostId, setActiveStudioPostId] = useState<string | null>(null);
 
   // Search & Shortcuts & Profile dialogs
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-  // AI modals
-  const [isAiPlanModalOpen, setIsAiPlanModalOpen] = useState(false);
-  const [isAiIdeaModalOpen, setIsAiIdeaModalOpen] = useState(false);
+  const [isAiGeneratorOpen, setIsAiGeneratorOpen] = useState(false);
+
+
   const [bannerDismissed, setBannerDismissed] = useState(false);
 
   // Onboarding
@@ -629,125 +621,6 @@ export const AppProvider: React.FC<{
     celebrateMilestone('Idea added to calendar');
   };
 
-  // Content Studio Handlers
-  const openContentStudio = (postId: string) => {
-    setActiveStudioPostId(postId);
-    setActiveTab('studio');
-  };
-
-  const closeContentStudio = () => {
-    setActiveStudioPostId(null);
-  };
-
-  const updatePostScriptContent = (postId: string, contentUpdates: Partial<ScriptContentData>) => {
-    setPosts((prevPosts) =>
-      prevPosts.map((p) => {
-        if (p.id !== postId) return p;
-
-        const existingScript = p.scriptContent || {
-          hasContent: false,
-          videoMode: 'sections',
-          targetSeconds: 60,
-        };
-
-        const mergedScript: ScriptContentData = {
-          ...existingScript,
-          ...contentUpdates,
-          lastEdited: new Date().toISOString(),
-        };
-
-        // Determine if script has meaningful content
-        const hasText = Boolean(
-          mergedScript.hookText?.trim() ||
-          mergedScript.bodyText?.trim() ||
-          (mergedScript.sceneRows && mergedScript.sceneRows.length > 0 && mergedScript.sceneRows.some((r) => r.audio?.trim() || r.visual?.trim())) ||
-          (mergedScript.slides && mergedScript.slides.length > 0 && mergedScript.slides.some((s) => s.body?.trim() || s.heading?.trim())) ||
-          mergedScript.writtenText?.trim()
-        );
-
-        mergedScript.hasContent = hasText;
-
-        // Auto-update checklist: mark "Script written" as completed
-        let updatedChecklist = [...p.checklist];
-        const scriptChecklistIndex = updatedChecklist.findIndex((c) =>
-          c.label.toLowerCase().includes('script') || c.label.toLowerCase().includes('hook')
-        );
-
-        if (hasText) {
-          if (scriptChecklistIndex >= 0) {
-            updatedChecklist[scriptChecklistIndex] = {
-              ...updatedChecklist[scriptChecklistIndex],
-              completed: true,
-            };
-          } else {
-            updatedChecklist.unshift({
-              id: `c-script-${Date.now()}`,
-              label: 'Script written',
-              completed: true,
-            });
-          }
-        }
-
-        // Auto-suggest / advance status from 'Idea' or 'Scripting/Planning' to 'Creating'
-        let updatedStatus = p.status;
-        if (hasText && (p.status === 'Idea' || p.status === 'Scripting/Planning')) {
-          updatedStatus = 'Creating';
-        }
-
-        const updatedPost: PostItem = {
-          ...p,
-          scriptContent: mergedScript,
-          checklist: updatedChecklist,
-          status: updatedStatus,
-          updatedAt: new Date().toISOString(),
-        };
-
-        if (selectedPost?.id === postId) {
-          setSelectedPost(updatedPost);
-        }
-
-        return updatedPost;
-      })
-    );
-  };
-
-  const saveScriptVersion = (postId: string, label?: string) => {
-    const post = posts.find((p) => p.id === postId);
-    if (!post || !post.scriptContent) return;
-
-    const newVersion: ScriptVersion = {
-      id: `ver-${Date.now()}`,
-      timestamp: new Date().toISOString(),
-      label: label || `Snapshot ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`,
-      data: { ...post.scriptContent },
-    };
-
-    const existingHistory = post.scriptContent.history || [];
-    const updatedHistory = [newVersion, ...existingHistory].slice(0, 10);
-
-    updatePostScriptContent(postId, {
-      history: updatedHistory,
-    });
-  };
-
-  const restoreScriptVersion = (postId: string, versionId: string) => {
-    const post = posts.find((p) => p.id === postId);
-    if (!post?.scriptContent?.history) return;
-
-    const versionToRestore = post.scriptContent.history.find((v) => v.id === versionId);
-    if (!versionToRestore) return;
-
-    // Save current version before restoring
-    saveScriptVersion(postId, 'Before restore');
-
-    updatePostScriptContent(postId, {
-      ...versionToRestore.data,
-      history: post.scriptContent.history,
-    });
-
-    addToast('Restored previous script version', undefined, 'success');
-  };
-
   // Settings Actions
   const updateSettings = (updates: Partial<UserSettings>) => {
     setSettings((prev) => {
@@ -973,10 +846,10 @@ export const AppProvider: React.FC<{
         setIsShortcutsOpen,
         isSettingsOpen,
         setIsSettingsOpen,
-        isAiPlanModalOpen,
-        setIsAiPlanModalOpen,
-        isAiIdeaModalOpen,
-        setIsAiIdeaModalOpen,
+        
+        isAiGeneratorOpen,
+        setIsAiGeneratorOpen,
+
         showOnboarding,
         setShowOnboarding,
         completeOnboarding,
@@ -994,12 +867,6 @@ export const AppProvider: React.FC<{
         updateIdea,
         deleteIdea,
         convertIdeaToPost,
-        activeStudioPostId,
-        openContentStudio,
-        closeContentStudio,
-        updatePostScriptContent,
-        saveScriptVersion,
-        restoreScriptVersion,
         updateSettings,
         clearSampleData,
         restoreSampleData,

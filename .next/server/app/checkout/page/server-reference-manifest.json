@@ -1,0 +1,16 @@
+{
+  "node": {
+    "405c85b397aa79e9af7a4b9c1efd2930d8b880a767": {
+      "workers": {
+        "app/checkout/page": {
+          "moduleId": 73895,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "processCheckout",
+      "filename": "src/app/actions/checkout.ts"
+    }
+  },
+  "edge": {}
+}

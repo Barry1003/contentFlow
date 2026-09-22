@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Sparkles,
   Search,
   Plus,
   X,
@@ -18,14 +17,12 @@ export const Header: React.FC = () => {
     openQuickAdd,
     setIsSearchOpen,
     setIsSettingsOpen,
-    setIsAiIdeaModalOpen,
   } = useApp();
 
   const tabLabels: Record<string, string> = {
     today: 'Today',
     calendar: 'Calendar',
     board: 'Pipeline',
-    studio: 'Content Studio',
     ideas: 'Ideas',
     insights: 'Insights',
     dashboard: 'Insights',
@@ -104,17 +101,7 @@ export const Header: React.FC = () => {
             </kbd>
           </button>
 
-          {/* AI Inspire */}
-          <button
-            id="header-ai-inspire-btn"
-            type="button"
-            onClick={() => setIsAiIdeaModalOpen(true)}
-            className="hidden sm:inline-flex items-center gap-2 h-8 px-3 rounded-lg border border-indigo-200 dark:border-indigo-900/50 bg-indigo-50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-sm transition-all shadow-sm font-medium focus-ring"
-            title="Brainstorm post concepts with AI"
-          >
-            <Sparkles className="w-4 h-4 stroke-[1.5] text-indigo-500" />
-            <span>Inspire</span>
-          </button>
+
 
           {/* Single Accent Button: New Post */}
           <button

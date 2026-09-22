@@ -5,7 +5,7 @@ import { PostItem } from '../../types';
 import { STATUS_CONFIG, PLATFORM_STYLE_TOKENS } from '../../utils';
 
 export const ListView: React.FC = () => {
-  const { posts, filters, setSelectedPost, openContentStudio, setIsCreateModalOpen } = useApp();
+  const { posts, filters, setSelectedPost, setIsCreateModalOpen } = useApp();
   const todayKey = new Date().toISOString().split('T')[0];
 
   const tom = new Date();
@@ -123,19 +123,6 @@ export const ListView: React.FC = () => {
                     />
                     <span className="truncate">{statusInfo.label}</span>
                   </div>
-
-                  {/* Hover inline action button */}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      openContentStudio(post.id);
-                    }}
-                    className="opacity-0 group-hover:opacity-100 p-1 rounded-[4px] hover:bg-[#EFECE6] dark:hover:bg-[#2B2B28] text-[#6F6C66] dark:text-[#9A978F] hover:text-[#2A2925] dark:hover:text-[#D9D7D1] transition-opacity focus-ring"
-                    title="Write content or edit script"
-                  >
-                    <PenTool className="w-3.5 h-3.5 stroke-[1.5]" />
-                  </button>
                 </div>
               </div>
             );

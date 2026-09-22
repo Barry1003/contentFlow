@@ -54,19 +54,6 @@ export const BottomNav: React.FC = () => {
       </button>
 
       <button
-        id="mobile-nav-studio"
-        onClick={() => setActiveTab('studio')}
-        className={`flex flex-col items-center justify-center flex-1 h-full ${
-          activeTab === 'studio'
-            ? 'text-[#2A2925] dark:text-[#D9D7D1] font-normal'
-            : 'text-[#6F6C66] dark:text-[#9A978F]'
-        }`}
-      >
-        <PenTool className="w-4 h-4 stroke-[1.5]" />
-        <span className="text-[11px] mt-0.5">Studio</span>
-      </button>
-
-      <button
         id="mobile-nav-board"
         onClick={() => setActiveTab('board')}
         className={`flex flex-col items-center justify-center flex-1 h-full ${
