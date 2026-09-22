@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Newsreader', Georgia, serif;
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+body {
+  background-color: var(--color-slate-50);
+  color: var(--color-slate-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background-color: var(--color-slate-950);
+  color: var(--color-slate-50);
+}
+
+::selection {
+  background-color: var(--color-indigo-100);
+  color: var(--color-indigo-900);
+}
+
+.dark ::selection {
+  background-color: rgba(49, 46, 129, 0.5); /* indigo-900/50 */
+  color: var(--color-indigo-100);
+}
+
+/* Page title styling */
+.page-title {
+  font-family: var(--font-editorial);
+  font-size: 1.875rem; /* 3xl */
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--color-slate-900);
+}
+
+.dark .page-title {
+  color: var(--color-slate-50);
+}
+
+/* Section title styling */
+.section-title {
+  font-size: 1.125rem; /* lg */
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--color-slate-800);
+}
+
+.dark .section-title {
+  color: var(--color-slate-200);
+}
+
+/* Precise scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-slate-200);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--color-slate-800);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-slate-300);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-slate-700);
+}
+
+/* Tabular numbers for dates, metrics, and timestamps */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Focus Ring for all interactive elements */
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus-ring:focus-visible {
+  outline-color: rgba(99, 102, 241, 0.5); /* indigo-500/50 */
+  outline-offset: 1px;
+}
+
+.dark .focus-ring:focus-visible {
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

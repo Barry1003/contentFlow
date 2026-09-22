@@ -1,0 +1,6 @@
+{
+  "name": "ContentFlow",
+  "description": "A mobile-friendly content calendar maker and performance tracker for social media creators with AI assistance, ideas bank, and analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

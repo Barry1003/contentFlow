@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///home/barry/Desktop/contentFlow/src/app/providers.tsx"],"sourcesContent":["\"use client\";\n\nimport React from 'react';\nimport { NeonAuthUIProvider } from '@neondatabase/neon-js/auth/react';\nimport '@neondatabase/neon-js/ui/css';\nimport { neon } from '../lib/neon';\n\nexport function Providers({ children }: { children: React.ReactNode }) {\n  return (\n    <NeonAuthUIProvider authClient={neon.auth}>\n      {children}\n    </NeonAuthUIProvider>\n  );\n}\n"],"names":["Providers","children","authClient","auth"],"mappings":";;;;;AAGA;AAEA;AALA;;;;;AAOO,SAASA,UAAU,EAAEC,QAAQ,EAAiC;IACnE,qBACE,8OAAC,0RAAkB;QAACC,YAAY,0HAAI,CAACC,IAAI;kBACtCF;;;;;;AAGP"}},
+    {"offset": {"line": 72, "column": 0}, "map": {"version":3,"sources":["file:///home/barry/Desktop/contentFlow/src/lib/neon.ts"],"sourcesContent":["import { createClient } from '@neondatabase/neon-js';\nimport { BetterAuthReactAdapter } from '@neondatabase/neon-js/auth/react/adapters';\n\nconst authUrl = process.env.NEXT_PUBLIC_NEON_AUTH_URL || '';\n\n// @ts-expect-error type definitions are currently broken in neon-js beta\nexport const neon: any = createClient({\n  auth: {\n    url: authUrl,\n    adapter: BetterAuthReactAdapter(),\n  },\n});\n"],"names":["authUrl","neon","auth","url","adapter"],"mappings":";;;;AAAA;AACA;;;AAEA,MAAMA,UAAU,2HAAyC;AAGlD,MAAMC,OAAY,IAAA,8LAAY,EAAC;IACpCC,MAAM;QACJC,KAAKH;QACLI,SAAS,IAAA,0QAAsB;IACjC;AACF"}}]
+}

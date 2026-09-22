@@ -1,0 +1,3 @@
+{
+  "/api/gemini/[action]/route": "app/api/gemini/[action]/route.js"
+}

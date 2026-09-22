@@ -1,0 +1,8 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/account/[[...pathname]]/page": "/account/[[...pathname]]",
+  "/api/gemini/[action]/route": "/api/gemini/[action]",
+  "/auth/[[...pathname]]/page": "/auth/[[...pathname]]",
+  "/page": "/"
+}

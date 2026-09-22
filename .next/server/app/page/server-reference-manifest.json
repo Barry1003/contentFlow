@@ -1,0 +1,115 @@
+{
+  "node": {
+    "40e882301bff7ad055f881d9936fe416bcc62df1e6": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "createPost",
+      "filename": "src/app/actions.ts"
+    },
+    "6017f004fbcc7db2349b64dd70d785688cce113c0d": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "updatePostInDb",
+      "filename": "src/app/actions.ts"
+    },
+    "40c602846ea263d2fcd938d91930bb9ae643caed17": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "deletePostInDb",
+      "filename": "src/app/actions.ts"
+    },
+    "4090bcc844b73d4c321494b69a42aa652b9a92e32f": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "createIdea",
+      "filename": "src/app/actions.ts"
+    },
+    "60a564be777b1e41856e3b2e9ae2b59805b8458719": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "updateIdeaInDb",
+      "filename": "src/app/actions.ts"
+    },
+    "40f2f86f4efeee5d8b87f218f959a73cde16d9bf3f": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "deleteIdeaInDb",
+      "filename": "src/app/actions.ts"
+    },
+    "40996905d834d0c1224357ebeacb77c19cbeb901ee": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "saveSettings",
+      "filename": "src/app/actions.ts"
+    },
+    "0008a99c13e74c808f06582a485d6869dd88cae021": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "getPosts",
+      "filename": "src/app/actions.ts"
+    },
+    "0048245078d68b2945574590877d322bf20592fb56": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "getIdeas",
+      "filename": "src/app/actions.ts"
+    },
+    "0060858bd1c3755b9baf372d8cda91f74de370edd1": {
+      "workers": {
+        "app/page": {
+          "moduleId": 32989,
+          "async": false,
+          "codeHash": null
+        }
+      },
+      "exportedName": "getSettings",
+      "filename": "src/app/actions.ts"
+    }
+  },
+  "edge": {}
+}

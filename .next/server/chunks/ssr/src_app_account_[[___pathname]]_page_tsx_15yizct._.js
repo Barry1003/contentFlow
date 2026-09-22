@@ -1,0 +1,3 @@
+module.exports=[52289,a=>{"use strict";var b=a.i(87924),c=a.i(91274),c=c,c=c,d=a.i(72131);a.s(["default",0,function({params:a}){let e=(0,d.use)(a),f=e.pathname?e.pathname.join("/"):"";return(0,b.jsx)("div",{style:{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"100vh"},children:(0,b.jsx)(c.AccountView,{pathname:f})})}],52289)}];
+
+//# sourceMappingURL=src_app_account_%5B%5B___pathname%5D%5D_page_tsx_15yizct._.js.map
